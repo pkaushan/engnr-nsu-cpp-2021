@@ -1,0 +1,121 @@
+name: "CI"
+
+# Controls when the action will run. Triggers the workflow on push or pull request events
+on:
+  push:
+  pull_request:
+    types: [opened, synchronize, edited, reopened]
+
+env:
+  LAB_INDEX: UNDEFINED
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  windows:
+    name: "Windows (MSVC + MSBuild)"
+    runs-on: windows-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v2.3.4
+        with:
+          submodules: recursive
+      - name: Install vcpkg dependencies
+        shell: cmd
+        run: |
+          cmd /C ".github\buildsteps\windows\install-dependencies.bat"
+      - name: Build
+        shell: cmd
+        run: |
+          cmd /C ".github\buildsteps\windows\build.bat"
+      - name: Run unit tests (via ctest)
+        shell: cmd
+        run: |
+          cmd /C ".github\buildsteps\windows\run-unittests.bat"
+      - name: Run custom functional tests
+        shell: cmd
+        run: |
+          cmd /C ".github\buildsteps\windows\run-custom-functionaltests.bat"
+      - name: Publish artifacts
+        uses: actions/upload-artifact@v2.1.4
+        with:
+          name: lab${{ env.LAB_INDEX }}-windows
+          retention-days: 14
+          path: |
+            ${{ env.LAB_INDEX }}/build/x86_32/**/*.exe
+            ${{ env.LAB_INDEX }}/build/x86_32/**/*.dll
+            ${{ env.LAB_INDEX }}/build/x86_32/**/*.lib
+            ${{ env.LAB_INDEX }}/build/x86_32/**/*.pdb
+            ${{ env.LAB_INDEX }}/build/x86_64/**/*.exe
+            ${{ env.LAB_INDEX }}/build/x86_64/**/*.dll
+            ${{ env.LAB_INDEX }}/build/x86_64/**/*.lib
+            ${{ env.LAB_INDEX }}/build/x86_64/**/*.pdb
+
+  linux:
+    name: "Ubuntu (GCC + Make)"
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v2.3.4
+        with:
+          submodules: recursive
+      - name: Install vcpkg dependencies
+        shell: bash
+        run: |
+          bash -c ".github/buildsteps/linux/install-dependencies.sh"
+      - name: Build
+        shell: bash
+        run: |
+          bash -c ".github/buildsteps/linux/build.sh"
+      - name: Run unit tests (via ctest)
+        shell: bash
+        run: |
+          bash -c ".github/buildsteps/linux/run-unittests.sh"
+      - name: Run custom functional tests
+        shell: bash
+        run: |
+          bash -c ".github/buildsteps/linux/run-custom-functionaltests.sh"
+      - name: Publish artifacts
+        uses: actions/upload-artifact@v2.1.4
+        with:
+          name: lab${{ env.LAB_INDEX }}-linux
+          retention-days: 14
+          path: |
+            ${{ env.LAB_INDEX }}/build/debug/
+            ${{ env.LAB_INDEX }}/build/release/
+
+  macos:
+    name: "macOS (Clang + Ninja)"
+    runs-on: macos-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v2.3.4
+        with:
+          submodules: recursive
+      - name: Install ninja build tool
+        shell: bash
+        run: |
+          brew install ninja
+      - name: Install vcpkg dependencies
+        shell: bash
+        run: |
+          bash -c ".github/buildsteps/macos/install-dependencies.sh"
+      - name: Build
+        shell: bash
+        run: |
+          bash -c ".github/buildsteps/macos/build.sh"
+      - name: Run unit tests (via ctest)
+        shell: bash
+        run: |
+          bash -c ".github/buildsteps/macos/run-unittests.sh"
+      - name: Run custom functional tests
+        shell: bash
+        run: |
+          bash -c ".github/buildsteps/macos/run-custom-functionaltests.sh"
+      - name: Publish artifacts
+        uses: actions/upload-artifact@v2.1.4
+        with:
+          name: lab${{ env.LAB_INDEX }}-macos
+          retention-days: 14
+          path: |
+            ${{ env.LAB_INDEX }}/build/debug/
+            ${{ env.LAB_INDEX }}/build/release/
