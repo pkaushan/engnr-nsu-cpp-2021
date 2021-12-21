@@ -35,3 +35,15 @@ else()
 endif()
 
 enable_testing()
+add_executable(
+        LinkedList_tests
+        LinkedList_tests.cpp
+)
+target_link_libraries(
+        LinkedList_tests
+        gtest_main
+)
+
+include(GoogleTest)
+gtest_discover_tests(LinkedList_tests)
+
