@@ -255,6 +255,29 @@ private:
     template<typename Compare>
     void sort_(iterator begin_, iterator end_, Compare comp);
 
+    bool operator == (const LinkedList& _linkedlist)
+    {
+        bool isequal;
+        auto iterator1 = cbegin();
+        auto iterator2 = _linkedlist.cbegin();
+        if (size_ !=_linkedlist.size_ )
+            return false;
+        for (int i = 0; i < size_;)
+        {
+            if (*iterator1 != *iterator2)
+                return false;
+            ++iterator1;
+            ++iterator2;
+        }
+        return true;
+    }
+
+    bool operator !=(const LinkedList& _linkedlist)
+    {
+        return *this != _linkedlist;
+    }
+
+
 public:
 
     template<typename Compare>
@@ -319,7 +342,7 @@ typename LinkedList<T, Allocator>::iterator
 LinkedList<T, Allocator>::insert(LinkedList::const_iterator pos, LinkedList::size_type count, const T &value) {
 
     if(count==0){
-        return pos;
+        return iterator(pos.ptr_);
     }
 
     auto ret = insert(pos, value);
