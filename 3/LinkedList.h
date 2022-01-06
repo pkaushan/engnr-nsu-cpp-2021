@@ -1,7 +1,3 @@
-//
-// Created by argem on 10.12.2021.
-//
-
 #ifndef LINKEDLIST_LINKEDLIST_H
 #define LINKEDLIST_LINKEDLIST_H
 
@@ -39,7 +35,7 @@ namespace detail{
 
         explicit ConstListIterator(ListNode<T>* ptr): ptr_(ptr){};
         explicit ConstListIterator(const ListNode<T>* ptr):
-        ptr_(const_cast<ListNode<T>*>(ptr)){};
+                ptr_(const_cast<ListNode<T>*>(ptr)){};
 
         ConstListIterator& operator ++(){
             ptr_ = ptr_->next_;
@@ -716,7 +712,7 @@ LinkedList<T, Allocator>::unique(BinaryPredicate p) {
 
 template<typename T, typename Allocator>
 typename LinkedList<T, Allocator>::
-        iterator LinkedList<T, Allocator>::begin() noexcept {
+iterator LinkedList<T, Allocator>::begin() noexcept {
 
     return iterator(base_.next_);
 }
@@ -724,7 +720,7 @@ typename LinkedList<T, Allocator>::
 
 template<typename T, typename Allocator>
 typename LinkedList<T, Allocator>::
-        const_iterator LinkedList<T, Allocator>::begin() const noexcept {
+const_iterator LinkedList<T, Allocator>::begin() const noexcept {
 
     return const_iterator(base_.next_);
 }
@@ -732,7 +728,7 @@ typename LinkedList<T, Allocator>::
 
 template<typename T, typename Allocator>
 typename LinkedList<T, Allocator>::
-        const_iterator LinkedList<T, Allocator>::cbegin() const noexcept {
+const_iterator LinkedList<T, Allocator>::cbegin() const noexcept {
 
     return const_iterator(base_.next_);
 }
@@ -740,7 +736,7 @@ typename LinkedList<T, Allocator>::
 
 template<typename T, typename Allocator>
 typename LinkedList<T, Allocator>::
-        iterator LinkedList<T, Allocator>::end() noexcept {
+iterator LinkedList<T, Allocator>::end() noexcept {
 
     return iterator(&base_);
 }
@@ -748,7 +744,7 @@ typename LinkedList<T, Allocator>::
 
 template<typename T, typename Allocator>
 typename LinkedList<T, Allocator>::
-        const_iterator LinkedList<T, Allocator>::end() const noexcept {
+const_iterator LinkedList<T, Allocator>::end() const noexcept {
 
     return const_iterator(&base_);
 }
@@ -756,7 +752,7 @@ typename LinkedList<T, Allocator>::
 
 template<typename T, typename Allocator>
 typename LinkedList<T, Allocator>::
-        const_iterator LinkedList<T, Allocator>::cend() const noexcept {
+const_iterator LinkedList<T, Allocator>::cend() const noexcept {
 
     return const_iterator(&base_);
 }
@@ -764,7 +760,7 @@ typename LinkedList<T, Allocator>::
 
 template<typename T, typename Allocator>
 typename LinkedList<T, Allocator>::
-        reverse_iterator LinkedList<T, Allocator>::rbegin() noexcept {
+reverse_iterator LinkedList<T, Allocator>::rbegin() noexcept {
 
     return reverse_iterator(iterator(&base_));
 }
@@ -772,7 +768,7 @@ typename LinkedList<T, Allocator>::
 
 template<typename T, typename Allocator>
 typename LinkedList<T, Allocator>::
-        const_reverse_iterator LinkedList<T, Allocator>::rbegin() const noexcept {
+const_reverse_iterator LinkedList<T, Allocator>::rbegin() const noexcept {
 
     return const_reverse_iterator(const_iterator(&base_));
 }
@@ -780,7 +776,7 @@ typename LinkedList<T, Allocator>::
 
 template<typename T, typename Allocator>
 typename LinkedList<T, Allocator>::
-        const_reverse_iterator LinkedList<T, Allocator>::crbegin() const noexcept {
+const_reverse_iterator LinkedList<T, Allocator>::crbegin() const noexcept {
 
     return const_reverse_iterator(const_iterator(&base_));
 }
@@ -788,7 +784,7 @@ typename LinkedList<T, Allocator>::
 
 template<typename T, typename Allocator>
 typename LinkedList<T, Allocator>::
-        reverse_iterator LinkedList<T, Allocator>::rend() noexcept {
+reverse_iterator LinkedList<T, Allocator>::rend() noexcept {
 
     return reverse_iterator(iterator(base_.next_));
 }
@@ -796,7 +792,7 @@ typename LinkedList<T, Allocator>::
 
 template<typename T, typename Allocator>
 typename LinkedList<T, Allocator>::
-        const_reverse_iterator LinkedList<T, Allocator>::rend() const noexcept {
+const_reverse_iterator LinkedList<T, Allocator>::rend() const noexcept {
 
     return const_reverse_iterator(const_iterator(base_.next_));
 }
@@ -804,7 +800,7 @@ typename LinkedList<T, Allocator>::
 
 template<typename T, typename Allocator>
 typename LinkedList<T, Allocator>::
-        const_reverse_iterator LinkedList<T, Allocator>::crend() const noexcept {
+const_reverse_iterator LinkedList<T, Allocator>::crend() const noexcept {
 
     return const_reverse_iterator(const_iterator(base_.next_));
 }

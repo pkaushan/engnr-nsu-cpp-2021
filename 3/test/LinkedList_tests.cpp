@@ -1,7 +1,7 @@
 #include <gtest/gtest.h>
 #include <iostream>
 
-#include "LinkedList.h"
+#include "../LinkedList.h"
 
 TEST(LL__Test, Copy_Test)
 {
@@ -67,7 +67,7 @@ TEST(LL__Test, Insert_Test_multi_Tvalue)
 {
     LinkedList<int> list = {1, 2, 3, 4, 5};
     auto it = (++(++list.cbegin()));
-    //Пришлось явно указать тип int16t, иначе он выбирает неверный шаблон. Explicit не работает(.
+//Пришлось явно указать тип int16t, иначе он выбирает неверный шаблон. Explicit не работает(.
     list.insert(it, (int16_t)3, 100);
     LinkedList<int> list1 = {1, 2, 3, 100, 100, 100, 4, 5};
     ASSERT_EQ(list1, list);
@@ -220,3 +220,4 @@ TEST(LL_Test, Unique_Test)
     LinkedList<int> list1 = {5, 8, 10};
     ASSERT_EQ(list , list1);
 }
+
