@@ -1,7 +1,7 @@
-#include <gtest/gtest.h>
 #include <iostream>
 
-#include "../LinkedList.h"
+#include "../src/list/LinkedList.h"
+#include "gtest/gtest.h"
 
 TEST(LL__Test, Copy_Test)
 {
@@ -49,9 +49,9 @@ TEST(LL__Test, InitList_Test)
 //Такой милый кейс, но clang с msvc на тестере подавились им(
 /*TEST(LL__Test, Move_Test_Death_Check)
 {
-    LinkedList<int> list = {1, 2, 3, 4, 5};
-    LinkedList<int> list1(std::move(list));
-    ASSERT_EXIT(list.begin()++, testing::KilledBySignal(SIGSEGV), ".*");
+    LinkedList<int> LinkedList = {1, 2, 3, 4, 5};
+    LinkedList<int> list1(std::move(LinkedList));
+    ASSERT_EXIT(LinkedList.begin()++, testing::KilledBySignal(SIGSEGV), ".*");
 }*/
 
 TEST(LL__Test, Insert_Test_simple)
