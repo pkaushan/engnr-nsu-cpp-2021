@@ -99,7 +99,6 @@ LinkedList_test_EXTERNAL_OBJECTS =
 
 test/LinkedList_test.exe: test/CMakeFiles/LinkedList_test.dir/LinkedList_tests.cpp.obj
 test/LinkedList_test.exe: test/CMakeFiles/LinkedList_test.dir/build.make
-test/LinkedList_test.exe: src/LinkedList/libLinkedList.a
 test/LinkedList_test.exe: lib/libgtestd.a
 test/LinkedList_test.exe: lib/libgmock_maind.a
 test/LinkedList_test.exe: lib/libgmockd.a

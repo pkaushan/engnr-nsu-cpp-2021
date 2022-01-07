@@ -72,24 +72,20 @@ CMAKE_BINARY_DIR = C:\Users\79639\engnr-nsu-cpp-2021\3\cmake-build-debug
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: src/main/all
-all: src/LinkedList/all
+all: CMakeFiles/LinkedList.dir/all
 all: googletest/all
 all: test/all
 
 .PHONY : all
 
 # The main recursive "preinstall" target.
-preinstall: src/main/preinstall
-preinstall: src/LinkedList/preinstall
 preinstall: googletest/preinstall
 preinstall: test/preinstall
 
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: src/main/clean
-clean: src/LinkedList/clean
+clean: CMakeFiles/LinkedList.dir/clean
 clean: googletest/clean
 clean: test/clean
 
@@ -156,42 +152,6 @@ googletest/googletest/clean: googletest/googletest/CMakeFiles/gtest_main.dir/cle
 .PHONY : googletest/googletest/clean
 
 #=============================================================================
-# Directory level rules for directory src/LinkedList
-
-# Recursive "all" directory target.
-src/LinkedList/all: src/LinkedList/CMakeFiles/LinkedList.dir/all
-
-.PHONY : src/LinkedList/all
-
-# Recursive "preinstall" directory target.
-src/LinkedList/preinstall:
-
-.PHONY : src/LinkedList/preinstall
-
-# Recursive "clean" directory target.
-src/LinkedList/clean: src/LinkedList/CMakeFiles/LinkedList.dir/clean
-
-.PHONY : src/LinkedList/clean
-
-#=============================================================================
-# Directory level rules for directory src/main
-
-# Recursive "all" directory target.
-src/main/all: src/main/CMakeFiles/main.dir/all
-
-.PHONY : src/main/all
-
-# Recursive "preinstall" directory target.
-src/main/preinstall:
-
-.PHONY : src/main/preinstall
-
-# Recursive "clean" directory target.
-src/main/clean: src/main/CMakeFiles/main.dir/clean
-
-.PHONY : src/main/clean
-
-#=============================================================================
 # Directory level rules for directory test
 
 # Recursive "all" directory target.
@@ -210,68 +170,41 @@ test/clean: test/CMakeFiles/LinkedList_test.dir/clean
 .PHONY : test/clean
 
 #=============================================================================
-# Target rules for target src/main/CMakeFiles/main.dir
+# Target rules for target CMakeFiles/LinkedList.dir
 
 # All Build rule for target.
-src/main/CMakeFiles/main.dir/all:
-	$(MAKE) $(MAKESILENT) -f src\main\CMakeFiles\main.dir\build.make src/main/CMakeFiles/main.dir/depend
-	$(MAKE) $(MAKESILENT) -f src\main\CMakeFiles\main.dir\build.make src/main/CMakeFiles/main.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\79639\engnr-nsu-cpp-2021\3\cmake-build-debug\CMakeFiles --progress-num=11,12 "Built target main"
-.PHONY : src/main/CMakeFiles/main.dir/all
+CMakeFiles/LinkedList.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\LinkedList.dir\build.make CMakeFiles/LinkedList.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\LinkedList.dir\build.make CMakeFiles/LinkedList.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\79639\engnr-nsu-cpp-2021\3\cmake-build-debug\CMakeFiles --progress-num=1,2 "Built target LinkedList"
+.PHONY : CMakeFiles/LinkedList.dir/all
 
 # Build rule for subdir invocation for target.
-src/main/CMakeFiles/main.dir/rule: cmake_check_build_system
+CMakeFiles/LinkedList.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\79639\engnr-nsu-cpp-2021\3\cmake-build-debug\CMakeFiles 2
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 src/main/CMakeFiles/main.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/LinkedList.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\79639\engnr-nsu-cpp-2021\3\cmake-build-debug\CMakeFiles 0
-.PHONY : src/main/CMakeFiles/main.dir/rule
+.PHONY : CMakeFiles/LinkedList.dir/rule
 
 # Convenience name for target.
-main: src/main/CMakeFiles/main.dir/rule
-
-.PHONY : main
-
-# clean rule for target.
-src/main/CMakeFiles/main.dir/clean:
-	$(MAKE) $(MAKESILENT) -f src\main\CMakeFiles\main.dir\build.make src/main/CMakeFiles/main.dir/clean
-.PHONY : src/main/CMakeFiles/main.dir/clean
-
-#=============================================================================
-# Target rules for target src/LinkedList/CMakeFiles/LinkedList.dir
-
-# All Build rule for target.
-src/LinkedList/CMakeFiles/LinkedList.dir/all:
-	$(MAKE) $(MAKESILENT) -f src\LinkedList\CMakeFiles\LinkedList.dir\build.make src/LinkedList/CMakeFiles/LinkedList.dir/depend
-	$(MAKE) $(MAKESILENT) -f src\LinkedList\CMakeFiles\LinkedList.dir\build.make src/LinkedList/CMakeFiles/LinkedList.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\79639\engnr-nsu-cpp-2021\3\cmake-build-debug\CMakeFiles --progress-num= "Built target LinkedList"
-.PHONY : src/LinkedList/CMakeFiles/LinkedList.dir/all
-
-# Build rule for subdir invocation for target.
-src/LinkedList/CMakeFiles/LinkedList.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\79639\engnr-nsu-cpp-2021\3\cmake-build-debug\CMakeFiles 0
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 src/LinkedList/CMakeFiles/LinkedList.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\79639\engnr-nsu-cpp-2021\3\cmake-build-debug\CMakeFiles 0
-.PHONY : src/LinkedList/CMakeFiles/LinkedList.dir/rule
-
-# Convenience name for target.
-LinkedList: src/LinkedList/CMakeFiles/LinkedList.dir/rule
+LinkedList: CMakeFiles/LinkedList.dir/rule
 
 .PHONY : LinkedList
 
 # clean rule for target.
-src/LinkedList/CMakeFiles/LinkedList.dir/clean:
-	$(MAKE) $(MAKESILENT) -f src\LinkedList\CMakeFiles\LinkedList.dir\build.make src/LinkedList/CMakeFiles/LinkedList.dir/clean
-.PHONY : src/LinkedList/CMakeFiles/LinkedList.dir/clean
+CMakeFiles/LinkedList.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\LinkedList.dir\build.make CMakeFiles/LinkedList.dir/clean
+.PHONY : CMakeFiles/LinkedList.dir/clean
 
 #=============================================================================
 # Target rules for target googletest/googlemock/CMakeFiles/gmock_main.dir
 
 # All Build rule for target.
-googletest/googlemock/CMakeFiles/gmock_main.dir/all: googletest/googletest/CMakeFiles/gtest.dir/all
 googletest/googlemock/CMakeFiles/gmock_main.dir/all: googletest/googlemock/CMakeFiles/gmock.dir/all
+googletest/googlemock/CMakeFiles/gmock_main.dir/all: googletest/googletest/CMakeFiles/gtest.dir/all
 	$(MAKE) $(MAKESILENT) -f googletest\googlemock\CMakeFiles\gmock_main.dir\build.make googletest/googlemock/CMakeFiles/gmock_main.dir/depend
 	$(MAKE) $(MAKESILENT) -f googletest\googlemock\CMakeFiles\gmock_main.dir\build.make googletest/googlemock/CMakeFiles/gmock_main.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\79639\engnr-nsu-cpp-2021\3\cmake-build-debug\CMakeFiles --progress-num=5,6 "Built target gmock_main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\79639\engnr-nsu-cpp-2021\3\cmake-build-debug\CMakeFiles --progress-num=7,8 "Built target gmock_main"
 .PHONY : googletest/googlemock/CMakeFiles/gmock_main.dir/all
 
 # Build rule for subdir invocation for target.
@@ -298,7 +231,7 @@ googletest/googlemock/CMakeFiles/gmock_main.dir/clean:
 googletest/googlemock/CMakeFiles/gmock.dir/all: googletest/googletest/CMakeFiles/gtest.dir/all
 	$(MAKE) $(MAKESILENT) -f googletest\googlemock\CMakeFiles\gmock.dir\build.make googletest/googlemock/CMakeFiles/gmock.dir/depend
 	$(MAKE) $(MAKESILENT) -f googletest\googlemock\CMakeFiles\gmock.dir\build.make googletest/googlemock/CMakeFiles/gmock.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\79639\engnr-nsu-cpp-2021\3\cmake-build-debug\CMakeFiles --progress-num=3,4 "Built target gmock"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\79639\engnr-nsu-cpp-2021\3\cmake-build-debug\CMakeFiles --progress-num=5,6 "Built target gmock"
 .PHONY : googletest/googlemock/CMakeFiles/gmock.dir/all
 
 # Build rule for subdir invocation for target.
@@ -325,7 +258,7 @@ googletest/googlemock/CMakeFiles/gmock.dir/clean:
 googletest/googletest/CMakeFiles/gtest.dir/all:
 	$(MAKE) $(MAKESILENT) -f googletest\googletest\CMakeFiles\gtest.dir\build.make googletest/googletest/CMakeFiles/gtest.dir/depend
 	$(MAKE) $(MAKESILENT) -f googletest\googletest\CMakeFiles\gtest.dir\build.make googletest/googletest/CMakeFiles/gtest.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\79639\engnr-nsu-cpp-2021\3\cmake-build-debug\CMakeFiles --progress-num=7,8 "Built target gtest"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\79639\engnr-nsu-cpp-2021\3\cmake-build-debug\CMakeFiles --progress-num=9,10 "Built target gtest"
 .PHONY : googletest/googletest/CMakeFiles/gtest.dir/all
 
 # Build rule for subdir invocation for target.
@@ -352,7 +285,7 @@ googletest/googletest/CMakeFiles/gtest.dir/clean:
 googletest/googletest/CMakeFiles/gtest_main.dir/all: googletest/googletest/CMakeFiles/gtest.dir/all
 	$(MAKE) $(MAKESILENT) -f googletest\googletest\CMakeFiles\gtest_main.dir\build.make googletest/googletest/CMakeFiles/gtest_main.dir/depend
 	$(MAKE) $(MAKESILENT) -f googletest\googletest\CMakeFiles\gtest_main.dir\build.make googletest/googletest/CMakeFiles/gtest_main.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\79639\engnr-nsu-cpp-2021\3\cmake-build-debug\CMakeFiles --progress-num=9,10 "Built target gtest_main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\79639\engnr-nsu-cpp-2021\3\cmake-build-debug\CMakeFiles --progress-num=11,12 "Built target gtest_main"
 .PHONY : googletest/googletest/CMakeFiles/gtest_main.dir/all
 
 # Build rule for subdir invocation for target.
@@ -376,13 +309,12 @@ googletest/googletest/CMakeFiles/gtest_main.dir/clean:
 # Target rules for target test/CMakeFiles/LinkedList_test.dir
 
 # All Build rule for target.
-test/CMakeFiles/LinkedList_test.dir/all: src/LinkedList/CMakeFiles/LinkedList.dir/all
+test/CMakeFiles/LinkedList_test.dir/all: googletest/googlemock/CMakeFiles/gmock.dir/all
 test/CMakeFiles/LinkedList_test.dir/all: googletest/googletest/CMakeFiles/gtest.dir/all
 test/CMakeFiles/LinkedList_test.dir/all: googletest/googlemock/CMakeFiles/gmock_main.dir/all
-test/CMakeFiles/LinkedList_test.dir/all: googletest/googlemock/CMakeFiles/gmock.dir/all
 	$(MAKE) $(MAKESILENT) -f test\CMakeFiles\LinkedList_test.dir\build.make test/CMakeFiles/LinkedList_test.dir/depend
 	$(MAKE) $(MAKESILENT) -f test\CMakeFiles\LinkedList_test.dir\build.make test/CMakeFiles/LinkedList_test.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\79639\engnr-nsu-cpp-2021\3\cmake-build-debug\CMakeFiles --progress-num=1,2 "Built target LinkedList_test"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\79639\engnr-nsu-cpp-2021\3\cmake-build-debug\CMakeFiles --progress-num=3,4 "Built target LinkedList_test"
 .PHONY : test/CMakeFiles/LinkedList_test.dir/all
 
 # Build rule for subdir invocation for target.

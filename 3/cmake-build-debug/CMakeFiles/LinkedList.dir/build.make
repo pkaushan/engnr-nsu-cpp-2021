@@ -76,27 +76,27 @@ include CMakeFiles/LinkedList.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/LinkedList.dir/flags.make
 
-CMakeFiles/LinkedList.dir/src/main/main.cpp.obj: CMakeFiles/LinkedList.dir/flags.make
-CMakeFiles/LinkedList.dir/src/main/main.cpp.obj: ../src/main/main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\79639\engnr-nsu-cpp-2021\3\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/LinkedList.dir/src/main/main.cpp.obj"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\LinkedList.dir\src\main\main.cpp.obj -c C:\Users\79639\engnr-nsu-cpp-2021\3\src\main\main.cpp
+CMakeFiles/LinkedList.dir/main.cpp.obj: CMakeFiles/LinkedList.dir/flags.make
+CMakeFiles/LinkedList.dir/main.cpp.obj: ../main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\79639\engnr-nsu-cpp-2021\3\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/LinkedList.dir/main.cpp.obj"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\LinkedList.dir\main.cpp.obj -c C:\Users\79639\engnr-nsu-cpp-2021\3\main.cpp
 
-CMakeFiles/LinkedList.dir/src/main/main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/LinkedList.dir/src/main/main.cpp.i"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\79639\engnr-nsu-cpp-2021\3\src\main\main.cpp > CMakeFiles\LinkedList.dir\src\main\main.cpp.i
+CMakeFiles/LinkedList.dir/main.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/LinkedList.dir/main.cpp.i"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\79639\engnr-nsu-cpp-2021\3\main.cpp > CMakeFiles\LinkedList.dir\main.cpp.i
 
-CMakeFiles/LinkedList.dir/src/main/main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/LinkedList.dir/src/main/main.cpp.s"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\79639\engnr-nsu-cpp-2021\3\src\main\main.cpp -o CMakeFiles\LinkedList.dir\src\main\main.cpp.s
+CMakeFiles/LinkedList.dir/main.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/LinkedList.dir/main.cpp.s"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\79639\engnr-nsu-cpp-2021\3\main.cpp -o CMakeFiles\LinkedList.dir\main.cpp.s
 
 # Object files for target LinkedList
 LinkedList_OBJECTS = \
-"CMakeFiles/LinkedList.dir/src/main/main.cpp.obj"
+"CMakeFiles/LinkedList.dir/main.cpp.obj"
 
 # External object files for target LinkedList
 LinkedList_EXTERNAL_OBJECTS =
 
-LinkedList.exe: CMakeFiles/LinkedList.dir/src/main/main.cpp.obj
+LinkedList.exe: CMakeFiles/LinkedList.dir/main.cpp.obj
 LinkedList.exe: CMakeFiles/LinkedList.dir/build.make
 LinkedList.exe: CMakeFiles/LinkedList.dir/linklibs.rsp
 LinkedList.exe: CMakeFiles/LinkedList.dir/objects1.rsp

@@ -56,8 +56,6 @@ set(CMAKE_MAKEFILE_DEPENDS
   "../googletest/googletest/cmake/gtest.pc.in"
   "../googletest/googletest/cmake/gtest_main.pc.in"
   "../googletest/googletest/cmake/internal_utils.cmake"
-  "../src/LinkedList/CMakeLists.txt"
-  "../src/main/CMakeLists.txt"
   "../test/CMakeLists.txt"
   )
 
@@ -70,8 +68,6 @@ set(CMAKE_MAKEFILE_OUTPUTS
 # Byproducts of CMake generate step:
 set(CMAKE_MAKEFILE_PRODUCTS
   "CMakeFiles/CMakeDirectoryInformation.cmake"
-  "src/main/CMakeFiles/CMakeDirectoryInformation.cmake"
-  "src/LinkedList/CMakeFiles/CMakeDirectoryInformation.cmake"
   "googletest/CMakeFiles/CMakeDirectoryInformation.cmake"
   "googletest/googlemock/CMakeFiles/CMakeDirectoryInformation.cmake"
   "googletest/googletest/CMakeFiles/CMakeDirectoryInformation.cmake"
@@ -80,8 +76,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
-  "src/main/CMakeFiles/main.dir/DependInfo.cmake"
-  "src/LinkedList/CMakeFiles/LinkedList.dir/DependInfo.cmake"
+  "CMakeFiles/LinkedList.dir/DependInfo.cmake"
   "googletest/googlemock/CMakeFiles/gmock_main.dir/DependInfo.cmake"
   "googletest/googlemock/CMakeFiles/gmock.dir/DependInfo.cmake"
   "googletest/googletest/CMakeFiles/gtest.dir/DependInfo.cmake"
