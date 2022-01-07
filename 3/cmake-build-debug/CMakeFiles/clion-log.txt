@@ -1,6 +1,4 @@
 "C:\Program Files\JetBrains\CLion 2020.2.3\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug "-DCMAKE_MAKE_PROGRAM=C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/mingw32-make.exe" "-DCMAKE_C_COMPILER=C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/gcc.exe" "-DCMAKE_CXX_COMPILER=C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/g++.exe" -G "CodeBlocks - MinGW Makefiles" C:\Users\79639\engnr-nsu-cpp-2021\3
 -- Configuring done
-CMake Error: Cannot determine link language for target "LinkedList".
-CMake Error: CMake can not determine linker language for target: LinkedList
 -- Generating done
-CMake Generate step failed.  Build files cannot be regenerated correctly.
+-- Build files have been written to: C:/Users/79639/engnr-nsu-cpp-2021/3/cmake-build-debug

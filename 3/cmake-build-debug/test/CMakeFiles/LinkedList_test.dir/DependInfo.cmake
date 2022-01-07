@@ -10,7 +10,6 @@ set(CMAKE_CXX_COMPILER_ID "GNU")
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
-  "../test/../src/LinkedList"
   "../googletest/googletest/include"
   "../googletest/googletest"
   "../googletest/googlemock/include"
@@ -19,7 +18,6 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
-  "C:/Users/79639/engnr-nsu-cpp-2021/3/cmake-build-debug/src/LinkedList/CMakeFiles/LinkedList.dir/DependInfo.cmake"
   "C:/Users/79639/engnr-nsu-cpp-2021/3/cmake-build-debug/googletest/googletest/CMakeFiles/gtest.dir/DependInfo.cmake"
   "C:/Users/79639/engnr-nsu-cpp-2021/3/cmake-build-debug/googletest/googlemock/CMakeFiles/gmock_main.dir/DependInfo.cmake"
   "C:/Users/79639/engnr-nsu-cpp-2021/3/cmake-build-debug/googletest/googlemock/CMakeFiles/gmock.dir/DependInfo.cmake"

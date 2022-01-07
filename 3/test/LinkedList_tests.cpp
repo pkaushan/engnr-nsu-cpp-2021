@@ -1,6 +1,6 @@
 #include <iostream>
 
-#include "../src/list/LinkedList.h"
+#include "../LinkedList.h"
 #include "gtest/gtest.h"
 
 TEST(LL__Test, Copy_Test)

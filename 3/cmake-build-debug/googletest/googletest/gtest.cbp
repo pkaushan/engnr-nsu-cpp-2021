@@ -5,7 +5,7 @@
 		<Option title="gtest"/>
 		<Option makefile_is_custom="1"/>
 		<Option compiler="gcc"/>
-		<Option virtualFolders="CMake Files\;CMake Files\src\;CMake Files\src\main\;CMake Files\src\LinkedList\;CMake Files\googletest\;CMake Files\googletest\googlemock\;CMake Files\googletest\googlemock\cmake\;CMake Files\googletest\googletest\;CMake Files\googletest\googletest\cmake\;CMake Files\test\;"/>
+		<Option virtualFolders="CMake Files\;CMake Files\googletest\;CMake Files\googletest\googlemock\;CMake Files\googletest\googlemock\cmake\;CMake Files\googletest\googletest\;CMake Files\googletest\googletest\cmake\;CMake Files\test\;"/>
 		<Build>
 			<Target title="all">
 				<Option working_dir="C:/Users/79639/engnr-nsu-cpp-2021/3/cmake-build-debug/googletest/googletest"/>
@@ -118,12 +118,6 @@
 		</Unit>
 		<Unit filename="C:/Users/79639/engnr-nsu-cpp-2021/3/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
-		</Unit>
-		<Unit filename="C:/Users/79639/engnr-nsu-cpp-2021/3/src/main/CMakeLists.txt">
-			<Option virtualFolder="CMake Files\src\main\"/>
-		</Unit>
-		<Unit filename="C:/Users/79639/engnr-nsu-cpp-2021/3/src/LinkedList/CMakeLists.txt">
-			<Option virtualFolder="CMake Files\src\LinkedList\"/>
 		</Unit>
 		<Unit filename="C:/Users/79639/engnr-nsu-cpp-2021/3/googletest/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\googletest\"/>
