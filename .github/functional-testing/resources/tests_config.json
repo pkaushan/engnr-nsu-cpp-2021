@@ -1,0 +1,1481 @@
+{
+  "tests":
+  [
+    {
+      "name": "no parameters (has to print error and help)",
+      "params": [],
+      "stdin": null,
+      "status_code": {
+        "banned": [0]
+      },
+      "stdout": {
+        "allowed": [""]
+      },
+      "stderr": {
+        "banned": [""]
+      }
+    },
+    {
+      "name": "-h",
+      "params": ["-h"],
+      "stdin": null,
+      "status_code": {
+        "allowed": [0]
+      },
+      "stdout": {
+        "banned": [""]
+      },
+      "stderr": {
+        "allowed": [""]
+      }
+    },
+    {
+      "name": "-h + another parameters (has to print error and help)",
+      "params": ["-h", "resources/lab1/test_1byte/file", "-m", "sum64"],
+      "stdin": null,
+      "status_code": {
+        "banned": [0]
+      },
+      "stdout": {
+        "allowed": [""]
+      },
+      "stderr": {
+        "banned": [""]
+      }
+    },
+    {
+      "name": "too many parameters (has to print error and help)",
+      "params": ["resources/lab1/test_1byte/file", "-m", "sum64", "sum64"],
+      "stdin": null,
+      "status_code": {
+        "banned": [0]
+      },
+      "stdout": {
+        "allowed": [""]
+      },
+      "stderr": {
+        "banned": [""]
+      }
+    },
+    {
+      "name": "invalid mode (has to print error and help)",
+      "params": ["resources/lab1/test_1byte/file", "-m", "sum32"],
+      "stdin": null,
+      "status_code": {
+        "banned": [0]
+      },
+      "stdout": {
+        "allowed": [""]
+      },
+      "stderr": {
+        "banned": [""]
+      }
+    },
+    {
+      "name": "non-existent file (has to print error and help)",
+      "params": ["resources/lab1/test_1byte/non_existent_file", "-m", "sum32"],
+      "stdin": null,
+      "status_code": {
+        "banned": [0]
+      },
+      "stdout": {
+        "allowed": [""]
+      },
+      "stderr": {
+        "banned": [""]
+      }
+    },
+
+
+    {
+      "name": "1 byte <filename> -m adler32",
+      "params": ["resources/lab1/test_1byte/file", "-m", "adler32"],
+      "stdin": null,
+      "status_code": {
+        "allowed": [0]
+      },
+      "stdout": {
+        "allowed": ["d400d4", "d400d4\n"]
+      },
+      "stderr": {
+        "allowed": [""]
+      }
+    },
+    {
+      "name": "1 byte -m adler32 <filename>",
+      "params": ["-m", "adler32", "resources/lab1/test_1byte/file"],
+      "stdin": null,
+      "status_code": {
+        "allowed": [0]
+      },
+      "stdout": {
+        "allowed": ["d400d4", "d400d4\n"]
+      },
+      "stderr": {
+        "allowed": [""]
+      }
+    },
+    {
+      "name": "1 byte <filename> -m sum64",
+      "params": ["resources/lab1/test_1byte/file", "-m", "sum64"],
+      "stdin": null,
+      "status_code": {
+        "allowed": [0]
+      },
+      "stdout": {
+        "allowed": ["d3", "d3\n"]
+      },
+      "stderr": {
+        "allowed": [""]
+      }
+    },
+    {
+      "name": "1 byte -m sum64 <filename>",
+      "params": ["-m", "sum64", "resources/lab1/test_1byte/file"],
+      "stdin": null,
+      "status_code": {
+        "allowed": [0]
+      },
+      "stdout": {
+        "allowed": ["d3", "d3\n"]
+      },
+      "stderr": {
+        "allowed": [""]
+      }
+    },
+
+
+    {
+      "name": "4 bytes <filename> -m adler32",
+      "params": ["resources/lab1/test_4bytes/file", "-m", "adler32"],
+      "stdin": null,
+      "status_code": {
+        "allowed": [0]
+      },
+      "stdout": {
+        "allowed": ["58801ed", "58801ed\n"]
+      },
+      "stderr": {
+        "allowed": [""]
+      }
+    },
+    {
+      "name": "4 bytes -m adler32 <filename>",
+      "params": ["-m", "adler32", "resources/lab1/test_4bytes/file"],
+      "stdin": null,
+      "status_code": {
+        "allowed": [0]
+      },
+      "stdout": {
+        "allowed": ["58801ed", "58801ed\n"]
+      },
+      "stderr": {
+        "allowed": [""]
+      }
+    },
+    {
+      "name": "4 bytes <filename> -m sum64",
+      "params": ["resources/lab1/test_4bytes/file", "-m", "sum64"],
+      "stdin": null,
+      "status_code": {
+        "allowed": [0]
+      },
+      "stdout": {
+        "allowed": ["f758039a", "f758039a\n"]
+      },
+      "stderr": {
+        "allowed": [""]
+      }
+    },
+    {
+      "name": "4 bytes -m sum64 <filename>",
+      "params": ["-m", "sum64", "resources/lab1/test_4bytes/file"],
+      "stdin": null,
+      "status_code": {
+        "allowed": [0]
+      },
+      "stdout": {
+        "allowed": ["f758039a", "f758039a\n"]
+      },
+      "stderr": {
+        "allowed": [""]
+      }
+    },
+
+
+    {
+      "name": "0xEDB88320 <filename> -m adler32",
+      "params": ["resources/lab1/test_4bytes-polynom/file", "-m", "adler32"],
+      "stdin": null,
+      "status_code": {
+        "allowed": [0]
+      },
+      "stdout": {
+        "allowed": ["7060249", "7060249\n"]
+      },
+      "stderr": {
+        "allowed": [""]
+      }
+    },
+    {
+      "name": "0xEDB88320 -m adler32 <filename>",
+      "params": ["-m", "adler32", "resources/lab1/test_4bytes-polynom/file"],
+      "stdin": null,
+      "status_code": {
+        "allowed": [0]
+      },
+      "stdout": {
+        "allowed": ["7060249", "7060249\n"]
+      },
+      "stderr": {
+        "allowed": [""]
+      }
+    },
+    {
+      "name": "0xEDB88320 <filename> -m sum64",
+      "params": ["resources/lab1/test_4bytes-polynom/file", "-m", "sum64"],
+      "stdin": null,
+      "status_code": {
+        "allowed": [0]
+      },
+      "stdout": {
+        "allowed": ["edb88320", "edb88320\n"]
+      },
+      "stderr": {
+        "allowed": [""]
+      }
+    },
+    {
+      "name": "0xEDB88320 -m sum64 <filename>",
+      "params": ["-m", "sum64", "resources/lab1/test_4bytes-polynom/file"],
+      "stdin": null,
+      "status_code": {
+        "allowed": [0]
+      },
+      "stdout": {
+        "allowed": ["edb88320", "edb88320\n"]
+      },
+      "stderr": {
+        "allowed": [""]
+      }
+    },
+
+
+    {
+      "name": "0x00000000 <filename> -m adler32",
+      "params": ["resources/lab1/test_4bytes-zeros/file", "-m", "adler32"],
+      "stdin": null,
+      "status_code": {
+        "allowed": [0]
+      },
+      "stdout": {
+        "allowed": ["40001", "40001\n"]
+      },
+      "stderr": {
+        "allowed": [""]
+      }
+    },
+    {
+      "name": "0x00000000 -m adler32 <filename>",
+      "params": ["-m", "adler32", "resources/lab1/test_4bytes-zeros/file"],
+      "stdin": null,
+      "status_code": {
+        "allowed": [0]
+      },
+      "stdout": {
+        "allowed": ["40001", "40001\n"]
+      },
+      "stderr": {
+        "allowed": [""]
+      }
+    },
+    {
+      "name": "0x00000000 <filename> -m sum64",
+      "params": ["resources/lab1/test_4bytes-zeros/file", "-m", "sum64"],
+      "stdin": null,
+      "status_code": {
+        "allowed": [0]
+      },
+      "stdout": {
+        "allowed": ["0", "0\n"]
+      },
+      "stderr": {
+        "allowed": [""]
+      }
+    },
+    {
+      "name": "0x00000000 -m sum64 <filename>",
+      "params": ["-m", "sum64", "resources/lab1/test_4bytes-zeros/file"],
+      "stdin": null,
+      "status_code": {
+        "allowed": [0]
+      },
+      "stdout": {
+        "allowed": ["0", "0\n"]
+      },
+      "stderr": {
+        "allowed": [""]
+      }
+    },
+
+
+    {
+      "name": "0x349083c70f <filename> -m adler32",
+      "params": ["resources/lab1/test_5bytes/file", "-m", "adler32"],
+      "stdin": null,
+      "status_code": {
+        "allowed": [0]
+      },
+      "stdout": {
+        "allowed": ["66f021e", "66f021e\n"]
+      },
+      "stderr": {
+        "allowed": [""]
+      }
+    },
+    {
+      "name": "0x349083c70f -m adler32 <filename>",
+      "params": ["-m", "adler32", "resources/lab1/test_5bytes/file"],
+      "stdin": null,
+      "status_code": {
+        "allowed": [0]
+      },
+      "stdout": {
+        "allowed": ["66f021e", "66f021e\n"]
+      },
+      "stderr": {
+        "allowed": [""]
+      }
+    },
+    {
+      "name": "0x349083c70f <filename> -m sum64",
+      "params": ["resources/lab1/test_5bytes/file", "-m", "sum64"],
+      "stdin": null,
+      "status_code": {
+        "allowed": [0]
+      },
+      "stdout": {
+        "allowed": ["349083c70f", "349083c70f\n"]
+      },
+      "stderr": {
+        "allowed": [""]
+      }
+    },
+    {
+      "name": "0x349083c70f -m sum64 <filename>",
+      "params": ["-m", "sum64", "resources/lab1/test_5bytes/file"],
+      "stdin": null,
+      "status_code": {
+        "allowed": [0]
+      },
+      "stdout": {
+        "allowed": ["349083c70f", "349083c70f\n"]
+      },
+      "stderr": {
+        "allowed": [""]
+      }
+    },
+
+
+    {
+      "name": "0x38018f934608 <filename> -m adler32",
+      "params": ["resources/lab1/test_6bytes/file", "-m", "adler32"],
+      "stdin": null,
+      "status_code": {
+        "allowed": [0]
+      },
+      "stdout": {
+        "allowed": ["5e401aa", "5e401aa\n"]
+      },
+      "stderr": {
+        "allowed": [""]
+      }
+    },
+    {
+      "name": "0x38018f934608 -m adler32 <filename>",
+      "params": ["-m", "adler32", "resources/lab1/test_6bytes/file"],
+      "stdin": null,
+      "status_code": {
+        "allowed": [0]
+      },
+      "stdout": {
+        "allowed": ["5e401aa", "5e401aa\n"]
+      },
+      "stderr": {
+        "allowed": [""]
+      }
+    },
+    {
+      "name": "0x38018f934608 <filename> -m sum64",
+      "params": ["resources/lab1/test_6bytes/file", "-m", "sum64"],
+      "stdin": null,
+      "status_code": {
+        "allowed": [0]
+      },
+      "stdout": {
+        "allowed": ["38018f934608", "38018f934608\n"]
+      },
+      "stderr": {
+        "allowed": [""]
+      }
+    },
+    {
+      "name": "0x38018f934608 -m sum64 <filename>",
+      "params": ["-m", "sum64", "resources/lab1/test_6bytes/file"],
+      "stdin": null,
+      "status_code": {
+        "allowed": [0]
+      },
+      "stdout": {
+        "allowed": ["38018f934608", "38018f934608\n"]
+      },
+      "stderr": {
+        "allowed": [""]
+      }
+    },
+
+
+    {
+      "name": "0x95b1821c86c181 <filename> -m adler32",
+      "params": ["resources/lab1/test_7bytes/file", "-m", "adler32"],
+      "stdin": null,
+      "status_code": {
+        "allowed": [0]
+      },
+      "stdout": {
+        "allowed": ["ecf03ad", "ecf03ad\n"]
+      },
+      "stderr": {
+        "allowed": [""]
+      }
+    },
+    {
+      "name": "0x95b1821c86c181 -m adler32 <filename>",
+      "params": ["-m", "adler32", "resources/lab1/test_7bytes/file"],
+      "stdin": null,
+      "status_code": {
+        "allowed": [0]
+      },
+      "stdout": {
+        "allowed": ["ecf03ad", "ecf03ad\n"]
+      },
+      "stderr": {
+        "allowed": [""]
+      }
+    },
+    {
+      "name": "0x95b1821c86c181 <filename> -m sum64",
+      "params": ["resources/lab1/test_7bytes/file", "-m", "sum64"],
+      "stdin": null,
+      "status_code": {
+        "allowed": [0]
+      },
+      "stdout": {
+        "allowed": ["95b1821c86c181", "95b1821c86c181\n"]
+      },
+      "stderr": {
+        "allowed": [""]
+      }
+    },
+    {
+      "name": "0x95b1821c86c181 -m sum64 <filename>",
+      "params": ["-m", "sum64", "resources/lab1/test_7bytes/file"],
+      "stdin": null,
+      "status_code": {
+        "allowed": [0]
+      },
+      "stdout": {
+        "allowed": ["95b1821c86c181", "95b1821c86c181\n"]
+      },
+      "stderr": {
+        "allowed": [""]
+      }
+    },
+
+
+    {
+      "name": "0xad90b4e79260f4ef <filename> -m adler32",
+      "params": ["resources/lab1/test_8bytes/file", "-m", "adler32"],
+      "stdin": null,
+      "status_code": {
+        "allowed": [0]
+      },
+      "stdout": {
+        "allowed": ["185a05ae", "185a05ae\n"]
+      },
+      "stderr": {
+        "allowed": [""]
+      }
+    },
+    {
+      "name": "0xad90b4e79260f4ef -m adler32 <filename>",
+      "params": ["-m", "adler32", "resources/lab1/test_8bytes/file"],
+      "stdin": null,
+      "status_code": {
+        "allowed": [0]
+      },
+      "stdout": {
+        "allowed": ["185a05ae", "185a05ae\n"]
+      },
+      "stderr": {
+        "allowed": [""]
+      }
+    },
+    {
+      "name": "0xad90b4e79260f4ef <filename> -m sum64",
+      "params": ["resources/lab1/test_8bytes/file", "-m", "sum64"],
+      "stdin": null,
+      "status_code": {
+        "allowed": [0]
+      },
+      "stdout": {
+        "allowed": ["ad90b4e79260f4ef", "ad90b4e79260f4ef\n"]
+      },
+      "stderr": {
+        "allowed": [""]
+      }
+    },
+    {
+      "name": "0xad90b4e79260f4ef -m sum64 <filename>",
+      "params": ["-m", "sum64", "resources/lab1/test_8bytes/file"],
+      "stdin": null,
+      "status_code": {
+        "allowed": [0]
+      },
+      "stdout": {
+        "allowed": ["ad90b4e79260f4ef", "ad90b4e79260f4ef\n"]
+      },
+      "stderr": {
+        "allowed": [""]
+      }
+    },
+
+
+    {
+      "name": "0xFFFFFFFFFFFFFFFF <filename> -m adler32",
+      "params": ["resources/lab1/test_8bytes-0xFFs/file", "-m", "adler32"],
+      "stdin": null,
+      "status_code": {
+        "allowed": [0]
+      },
+      "stdout": {
+        "allowed": ["23e407f9", "23e407f9\n"]
+      },
+      "stderr": {
+        "allowed": [""]
+      }
+    },
+    {
+      "name": "0xFFFFFFFFFFFFFFFF -m adler32 <filename>",
+      "params": ["-m", "adler32", "resources/lab1/test_8bytes-0xFFs/file"],
+      "stdin": null,
+      "status_code": {
+        "allowed": [0]
+      },
+      "stdout": {
+        "allowed": ["23e407f9", "23e407f9\n"]
+      },
+      "stderr": {
+        "allowed": [""]
+      }
+    },
+    {
+      "name": "0xFFFFFFFFFFFFFFFF <filename> -m sum64",
+      "params": ["resources/lab1/test_8bytes-0xFFs/file", "-m", "sum64"],
+      "stdin": null,
+      "status_code": {
+        "allowed": [0]
+      },
+      "stdout": {
+        "allowed": ["ffffffffffffffff", "ffffffffffffffff\n"]
+      },
+      "stderr": {
+        "allowed": [""]
+      }
+    },
+    {
+      "name": "0xFFFFFFFFFFFFFFFF -m sum64 <filename>",
+      "params": ["-m", "sum64", "resources/lab1/test_8bytes-0xFFs/file"],
+      "stdin": null,
+      "status_code": {
+        "allowed": [0]
+      },
+      "stdout": {
+        "allowed": ["ffffffffffffffff", "ffffffffffffffff\n"]
+      },
+      "stderr": {
+        "allowed": [""]
+      }
+    },
+
+
+    {
+      "name": "0x0000000000000000 <filename> -m adler32",
+      "params": ["resources/lab1/test_8bytes-zeros/file", "-m", "adler32"],
+      "stdin": null,
+      "status_code": {
+        "allowed": [0]
+      },
+      "stdout": {
+        "allowed": ["80001", "80001\n"]
+      },
+      "stderr": {
+        "allowed": [""]
+      }
+    },
+    {
+      "name": "0x0000000000000000 -m adler32 <filename>",
+      "params": ["-m", "adler32", "resources/lab1/test_8bytes-zeros/file"],
+      "stdin": null,
+      "status_code": {
+        "allowed": [0]
+      },
+      "stdout": {
+        "allowed": ["80001", "80001\n"]
+      },
+      "stderr": {
+        "allowed": [""]
+      }
+    },
+    {
+      "name": "0x0000000000000000 <filename> -m sum64",
+      "params": ["resources/lab1/test_8bytes-zeros/file", "-m", "sum64"],
+      "stdin": null,
+      "status_code": {
+        "allowed": [0]
+      },
+      "stdout": {
+        "allowed": ["0", "0\n"]
+      },
+      "stderr": {
+        "allowed": [""]
+      }
+    },
+    {
+      "name": "0x0000000000000000 -m sum64 <filename>",
+      "params": ["-m", "sum64", "resources/lab1/test_8bytes-zeros/file"],
+      "stdin": null,
+      "status_code": {
+        "allowed": [0]
+      },
+      "stdout": {
+        "allowed": ["0", "0\n"]
+      },
+      "stderr": {
+        "allowed": [""]
+      }
+    },
+
+
+    {
+      "name": "0x3c7a5ebdc3ca157316 <filename> -m adler32",
+      "params": ["resources/lab1/test_9bytes/file", "-m", "adler32"],
+      "stdin": null,
+      "status_code": {
+        "allowed": [0]
+      },
+      "stdout": {
+        "allowed": ["152703fd", "152703fd\n"]
+      },
+      "stderr": {
+        "allowed": [""]
+      }
+    },
+    {
+      "name": "0x3c7a5ebdc3ca157316 -m adler32 <filename>",
+      "params": ["-m", "adler32", "resources/lab1/test_9bytes/file"],
+      "stdin": null,
+      "status_code": {
+        "allowed": [0]
+      },
+      "stdout": {
+        "allowed": ["152703fd", "152703fd\n"]
+      },
+      "stderr": {
+        "allowed": [""]
+      }
+    },
+    {
+      "name": "0x3c7a5ebdc3ca157316 <filename> -m sum64",
+      "params": ["resources/lab1/test_9bytes/file", "-m", "sum64"],
+      "stdin": null,
+      "status_code": {
+        "allowed": [0]
+      },
+      "stdout": {
+        "allowed": ["3c7a5ebdc3ca1589", "3c7a5ebdc3ca1589\n"]
+      },
+      "stderr": {
+        "allowed": [""]
+      }
+    },
+    {
+      "name": "0x3c7a5ebdc3ca157316 -m sum64 <filename>",
+      "params": ["-m", "sum64", "resources/lab1/test_9bytes/file"],
+      "stdin": null,
+      "status_code": {
+        "allowed": [0]
+      },
+      "stdout": {
+        "allowed": ["3c7a5ebdc3ca1589", "3c7a5ebdc3ca1589\n"]
+      },
+      "stderr": {
+        "allowed": [""]
+      }
+    },
+
+
+    {
+      "name": "0x9ee08a716bab4809619b <filename> -m adler32",
+      "params": ["resources/lab1/test_10bytes/file", "-m", "adler32"],
+      "stdin": null,
+      "status_code": {
+        "allowed": [0]
+      },
+      "stdout": {
+        "allowed": ["1dee04dd", "1dee04dd\n"]
+      },
+      "stderr": {
+        "allowed": [""]
+      }
+    },
+    {
+      "name": "0x9ee08a716bab4809619b -m adler32 <filename>",
+      "params": ["-m", "adler32", "resources/lab1/test_10bytes/file"],
+      "stdin": null,
+      "status_code": {
+        "allowed": [0]
+      },
+      "stdout": {
+        "allowed": ["1dee04dd", "1dee04dd\n"]
+      },
+      "stderr": {
+        "allowed": [""]
+      }
+    },
+    {
+      "name": "0x9ee08a716bab4809619b <filename> -m sum64",
+      "params": ["resources/lab1/test_10bytes/file", "-m", "sum64"],
+      "stdin": null,
+      "status_code": {
+        "allowed": [0]
+      },
+      "stdout": {
+        "allowed": ["9ee08a716baba9a4", "9ee08a716baba9a4\n"]
+      },
+      "stderr": {
+        "allowed": [""]
+      }
+    },
+    {
+      "name": "0x9ee08a716bab4809619b -m sum64 <filename>",
+      "params": ["-m", "sum64", "resources/lab1/test_10bytes/file"],
+      "stdin": null,
+      "status_code": {
+        "allowed": [0]
+      },
+      "stdout": {
+        "allowed": ["9ee08a716baba9a4", "9ee08a716baba9a4\n"]
+      },
+      "stderr": {
+        "allowed": [""]
+      }
+    },
+
+
+    {
+      "name": "0xf97a8eec3b54abdac259ac <filename> -m adler32",
+      "params": ["resources/lab1/test_11bytes/file", "-m", "adler32"],
+      "stdin": null,
+      "status_code": {
+        "allowed": [0]
+      },
+      "stdout": {
+        "allowed": ["29d806c9", "29d806c9\n"]
+      },
+      "stderr": {
+        "allowed": [""]
+      }
+    },
+    {
+      "name": "0xf97a8eec3b54abdac259ac -m adler32 <filename>",
+      "params": ["-m", "adler32", "resources/lab1/test_11bytes/file"],
+      "stdin": null,
+      "status_code": {
+        "allowed": [0]
+      },
+      "stdout": {
+        "allowed": ["29d806c9", "29d806c9\n"]
+      },
+      "stderr": {
+        "allowed": [""]
+      }
+    },
+    {
+      "name": "0xf97a8eec3b54abdac259ac <filename> -m sum64",
+      "params": ["resources/lab1/test_11bytes/file", "-m", "sum64"],
+      "stdin": null,
+      "status_code": {
+        "allowed": [0]
+      },
+      "stdout": {
+        "allowed": ["f97a8eec3c170586", "f97a8eec3c170586\n"]
+      },
+      "stderr": {
+        "allowed": [""]
+      }
+    },
+    {
+      "name": "0xf97a8eec3b54abdac259ac -m sum64 <filename>",
+      "params": ["-m", "sum64", "resources/lab1/test_11bytes/file"],
+      "stdin": null,
+      "status_code": {
+        "allowed": [0]
+      },
+      "stdout": {
+        "allowed": ["f97a8eec3c170586", "f97a8eec3c170586\n"]
+      },
+      "stderr": {
+        "allowed": [""]
+      }
+    },
+
+
+    {
+      "name": "0xb2f97c43d81963b94d62a334 <filename> -m adler32",
+      "params": ["resources/lab1/test_12bytes/file", "-m", "adler32"],
+      "stdin": null,
+      "status_code": {
+        "allowed": [0]
+      },
+      "stdout": {
+        "allowed": ["2b7c05fe", "2b7c05fe\n"]
+      },
+      "stderr": {
+        "allowed": [""]
+      }
+    },
+    {
+      "name": "0xb2f97c43d81963b94d62a334 -m adler32 <filename>",
+      "params": ["-m", "adler32", "resources/lab1/test_12bytes/file"],
+      "stdin": null,
+      "status_code": {
+        "allowed": [0]
+      },
+      "stdout": {
+        "allowed": ["2b7c05fe", "2b7c05fe\n"]
+      },
+      "stderr": {
+        "allowed": [""]
+      }
+    },
+    {
+      "name": "0xb2f97c43d81963b94d62a334 <filename> -m sum64",
+      "params": ["resources/lab1/test_12bytes/file", "-m", "sum64"],
+      "stdin": null,
+      "status_code": {
+        "allowed": [0]
+      },
+      "stdout": {
+        "allowed": ["b2f97c44257c06ed", "b2f97c44257c06ed\n"]
+      },
+      "stderr": {
+        "allowed": [""]
+      }
+    },
+    {
+      "name": "0xb2f97c43d81963b94d62a334 -m sum64 <filename>",
+      "params": ["-m", "sum64", "resources/lab1/test_12bytes/file"],
+      "stdin": null,
+      "status_code": {
+        "allowed": [0]
+      },
+      "stdout": {
+        "allowed": ["b2f97c44257c06ed", "b2f97c44257c06ed\n"]
+      },
+      "stderr": {
+        "allowed": [""]
+      }
+    },
+
+
+    {
+      "name": "0x6b48d43e210fc1116aa6877b51 <filename> -m adler32",
+      "params": ["resources/lab1/test_13bytes/file", "-m", "adler32"],
+      "stdin": null,
+      "status_code": {
+        "allowed": [0]
+      },
+      "stdout": {
+        "allowed": ["2338052b", "2338052b\n"]
+      },
+      "stderr": {
+        "allowed": [""]
+      }
+    },
+    {
+      "name": "0x6b48d43e210fc1116aa6877b51 -m adler32 <filename>",
+      "params": ["-m", "adler32", "resources/lab1/test_13bytes/file"],
+      "stdin": null,
+      "status_code": {
+        "allowed": [0]
+      },
+      "stdout": {
+        "allowed": ["2338052b", "2338052b\n"]
+      },
+      "stderr": {
+        "allowed": [""]
+      }
+    },
+    {
+      "name": "0x6b48d43e210fc1116aa6877b51 <filename> -m sum64",
+      "params": ["resources/lab1/test_13bytes/file", "-m", "sum64"],
+      "stdin": null,
+      "status_code": {
+        "allowed": [0]
+      },
+      "stdout": {
+        "allowed": ["6b48d4a8c7973c62", "6b48d4a8c7973c62\n"]
+      },
+      "stderr": {
+        "allowed": [""]
+      }
+    },
+    {
+      "name": "0x6b48d43e210fc1116aa6877b51 -m sum64 <filename>",
+      "params": ["-m", "sum64", "resources/lab1/test_13bytes/file"],
+      "stdin": null,
+      "status_code": {
+        "allowed": [0]
+      },
+      "stdout": {
+        "allowed": ["6b48d4a8c7973c62", "6b48d4a8c7973c62\n"]
+      },
+      "stderr": {
+        "allowed": [""]
+      }
+    },
+
+
+    {
+      "name": "0x3b81d6d1c6b46444a0672750a116 <filename> -m adler32",
+      "params": ["resources/lab1/test_14bytes/file", "-m", "adler32"],
+      "stdin": null,
+      "status_code": {
+        "allowed": [0]
+      },
+      "stdout": {
+        "allowed": ["388b06bb", "388b06bb\n"]
+      },
+      "stderr": {
+        "allowed": [""]
+      }
+    },
+    {
+      "name": "0x3b81d6d1c6b46444a0672750a116 -m adler32 <filename>",
+      "params": ["-m", "adler32", "resources/lab1/test_14bytes/file"],
+      "stdin": null,
+      "status_code": {
+        "allowed": [0]
+      },
+      "stdout": {
+        "allowed": ["388b06bb", "388b06bb\n"]
+      },
+      "stderr": {
+        "allowed": [""]
+      }
+    },
+    {
+      "name": "0x3b81d6d1c6b46444a0672750a116 <filename> -m sum64",
+      "params": ["resources/lab1/test_14bytes/file", "-m", "sum64"],
+      "stdin": null,
+      "status_code": {
+        "allowed": [0]
+      },
+      "stdout": {
+        "allowed": ["3b827738ee05055a", "3b827738ee05055a\n"]
+      },
+      "stderr": {
+        "allowed": [""]
+      }
+    },
+    {
+      "name": "0x3b81d6d1c6b46444a0672750a116 -m sum64 <filename>",
+      "params": ["-m", "sum64", "resources/lab1/test_14bytes/file"],
+      "stdin": null,
+      "status_code": {
+        "allowed": [0]
+      },
+      "stdout": {
+        "allowed": ["3b827738ee05055a", "3b827738ee05055a\n"]
+      },
+      "stderr": {
+        "allowed": [""]
+      }
+    },
+
+
+    {
+      "name": "0xd9754ecdc5b31da799dfc44d9b5aa5 <filename> -m adler32",
+      "params": ["resources/lab1/test_15bytes/file", "-m", "adler32"],
+      "stdin": null,
+      "status_code": {
+        "allowed": [0]
+      },
+      "stdout": {
+        "allowed": ["480b08c9", "480b08c9\n"]
+      },
+      "stderr": {
+        "allowed": [""]
+      }
+    },
+    {
+      "name": "0xd9754ecdc5b31da799dfc44d9b5aa5 -m adler32 <filename>",
+      "params": ["-m", "adler32", "resources/lab1/test_15bytes/file"],
+      "stdin": null,
+      "status_code": {
+        "allowed": [0]
+      },
+      "stdout": {
+        "allowed": ["480b08c9", "480b08c9\n"]
+      },
+      "stderr": {
+        "allowed": [""]
+      }
+    },
+    {
+      "name": "0xd9754ecdc5b31da799dfc44d9b5aa5 <filename> -m sum64",
+      "params": ["resources/lab1/test_15bytes/file", "-m", "sum64"],
+      "stdin": null,
+      "status_code": {
+        "allowed": [0]
+      },
+      "stdout": {
+        "allowed": ["da0f2e92134e784c", "da0f2e92134e784c\n"]
+      },
+      "stderr": {
+        "allowed": [""]
+      }
+    },
+    {
+      "name": "0xd9754ecdc5b31da799dfc44d9b5aa5 -m sum64 <filename>",
+      "params": ["-m", "sum64", "resources/lab1/test_15bytes/file"],
+      "stdin": null,
+      "status_code": {
+        "allowed": [0]
+      },
+      "stdout": {
+        "allowed": ["da0f2e92134e784c", "da0f2e92134e784c\n"]
+      },
+      "stderr": {
+        "allowed": [""]
+      }
+    },
+
+
+    {
+      "name": "0x7e522bc3f6b6a1cfe6e01ee89b800ce1 <filename> -m adler32",
+      "params": ["resources/lab1/test_16bytes/file", "-m", "adler32"],
+      "stdin": null,
+      "status_code": {
+        "allowed": [0]
+      },
+      "stdout": {
+        "allowed": ["515b09af", "515b09af\n"]
+      },
+      "stderr": {
+        "allowed": [""]
+      }
+    },
+    {
+      "name": "0x7e522bc3f6b6a1cfe6e01ee89b800ce1 -m adler32 <filename>",
+      "params": ["-m", "adler32", "resources/lab1/test_16bytes/file"],
+      "stdin": null,
+      "status_code": {
+        "allowed": [0]
+      },
+      "stdout": {
+        "allowed": ["515b09af", "515b09af\n"]
+      },
+      "stderr": {
+        "allowed": [""]
+      }
+    },
+    {
+      "name": "0x7e522bc3f6b6a1cfe6e01ee89b800ce1 <filename> -m sum64",
+      "params": ["resources/lab1/test_16bytes/file", "-m", "sum64"],
+      "stdin": null,
+      "status_code": {
+        "allowed": [0]
+      },
+      "stdout": {
+        "allowed": ["65324aac9236aeb0", "65324aac9236aeb0\n"]
+      },
+      "stderr": {
+        "allowed": [""]
+      }
+    },
+    {
+      "name": "0x7e522bc3f6b6a1cfe6e01ee89b800ce1 -m sum64 <filename>",
+      "params": ["-m", "sum64", "resources/lab1/test_16bytes/file"],
+      "stdin": null,
+      "status_code": {
+        "allowed": [0]
+      },
+      "stdout": {
+        "allowed": ["65324aac9236aeb0", "65324aac9236aeb0\n"]
+      },
+      "stderr": {
+        "allowed": [""]
+      }
+    },
+
+
+    {
+      "name": "0xffffffffffffffffffffffffffffffff <filename> -m adler32",
+      "params": ["resources/lab1/test_16bytes-0xFFs/file", "-m", "adler32"],
+      "stdin": null,
+      "status_code": {
+        "allowed": [0]
+      },
+      "stdout": {
+        "allowed": ["87880ff1", "87880ff1\n"]
+      },
+      "stderr": {
+        "allowed": [""]
+      }
+    },
+    {
+      "name": "0xffffffffffffffffffffffffffffffff -m adler32 <filename>",
+      "params": ["-m", "adler32", "resources/lab1/test_16bytes-0xFFs/file"],
+      "stdin": null,
+      "status_code": {
+        "allowed": [0]
+      },
+      "stdout": {
+        "allowed": ["87880ff1", "87880ff1\n"]
+      },
+      "stderr": {
+        "allowed": [""]
+      }
+    },
+    {
+      "name": "0xffffffffffffffffffffffffffffffff <filename> -m sum64",
+      "params": ["resources/lab1/test_16bytes-0xFFs/file", "-m", "sum64"],
+      "stdin": null,
+      "status_code": {
+        "allowed": [0]
+      },
+      "stdout": {
+        "allowed": ["fffffffffffffffe", "fffffffffffffffe\n"]
+      },
+      "stderr": {
+        "allowed": [""]
+      }
+    },
+    {
+      "name": "0xffffffffffffffffffffffffffffffff -m sum64 <filename>",
+      "params": ["-m", "sum64", "resources/lab1/test_16bytes-0xFFs/file"],
+      "stdin": null,
+      "status_code": {
+        "allowed": [0]
+      },
+      "stdout": {
+        "allowed": ["fffffffffffffffe", "fffffffffffffffe\n"]
+      },
+      "stderr": {
+        "allowed": [""]
+      }
+    },
+
+
+    {
+      "name": "0x00000000000000000000000000000000 <filename> -m adler32",
+      "params": ["resources/lab1/test_16bytes-zeros/file", "-m", "adler32"],
+      "stdin": null,
+      "status_code": {
+        "allowed": [0]
+      },
+      "stdout": {
+        "allowed": ["100001", "100001\n"]
+      },
+      "stderr": {
+        "allowed": [""]
+      }
+    },
+    {
+      "name": "0x00000000000000000000000000000000 -m adler32 <filename>",
+      "params": ["-m", "adler32", "resources/lab1/test_16bytes-zeros/file"],
+      "stdin": null,
+      "status_code": {
+        "allowed": [0]
+      },
+      "stdout": {
+        "allowed": ["100001", "100001\n"]
+      },
+      "stderr": {
+        "allowed": [""]
+      }
+    },
+    {
+      "name": "0x00000000000000000000000000000000 <filename> -m sum64",
+      "params": ["resources/lab1/test_16bytes-zeros/file", "-m", "sum64"],
+      "stdin": null,
+      "status_code": {
+        "allowed": [0]
+      },
+      "stdout": {
+        "allowed": ["0", "0\n"]
+      },
+      "stderr": {
+        "allowed": [""]
+      }
+    },
+    {
+      "name": "0x00000000000000000000000000000000 -m sum64 <filename>",
+      "params": ["-m", "sum64", "resources/lab1/test_16bytes-zeros/file"],
+      "stdin": null,
+      "status_code": {
+        "allowed": [0]
+      },
+      "stdout": {
+        "allowed": ["0", "0\n"]
+      },
+      "stderr": {
+        "allowed": [""]
+      }
+    },
+
+
+    {
+      "name": "empty file <filename> -m adler32",
+      "params": ["resources/lab1/test_empty/file", "-m", "adler32"],
+      "stdin": null,
+      "status_code": {
+        "allowed": [0]
+      },
+      "stdout": {
+        "allowed": ["1", "1\n"]
+      },
+      "stderr": {
+        "allowed": [""]
+      }
+    },
+    {
+      "name": "empty file -m adler32 <filename>",
+      "params": ["-m", "adler32", "resources/lab1/test_empty/file"],
+      "stdin": null,
+      "status_code": {
+        "allowed": [0]
+      },
+      "stdout": {
+        "allowed": ["1", "1\n"]
+      },
+      "stderr": {
+        "allowed": [""]
+      }
+    },
+    {
+      "name": "empty file <filename> -m sum64",
+      "params": ["resources/lab1/test_empty/file", "-m", "sum64"],
+      "stdin": null,
+      "status_code": {
+        "allowed": [0]
+      },
+      "stdout": {
+        "allowed": ["0", "0\n"]
+      },
+      "stderr": {
+        "allowed": [""]
+      }
+    },
+    {
+      "name": "empty file -m sum64 <filename>",
+      "params": ["-m", "sum64", "resources/lab1/test_empty/file"],
+      "stdin": null,
+      "status_code": {
+        "allowed": [0]
+      },
+      "stdout": {
+        "allowed": ["0", "0\n"]
+      },
+      "stderr": {
+        "allowed": [""]
+      }
+    },
+
+
+    {
+      "name": "'Hello, world!' <filename> -m adler32",
+      "params": ["resources/lab1/test_Hello,world/file", "-m", "adler32"],
+      "stdin": null,
+      "status_code": {
+        "allowed": [0]
+      },
+      "stdout": {
+        "allowed": ["24f20494", "24f20494\n"]
+      },
+      "stderr": {
+        "allowed": [""]
+      }
+    },
+    {
+      "name": "'Hello, world!' -m adler32 <filename>",
+      "params": ["-m", "adler32", "resources/lab1/test_Hello,world/file"],
+      "stdin": null,
+      "status_code": {
+        "allowed": [0]
+      },
+      "stdout": {
+        "allowed": ["24f20494", "24f20494\n"]
+      },
+      "stderr": {
+        "allowed": [""]
+      }
+    },
+    {
+      "name": "'Hello, world!' <filename> -m sum64",
+      "params": ["resources/lab1/test_Hello,world/file", "-m", "sum64"],
+      "stdin": null,
+      "status_code": {
+        "allowed": [0]
+      },
+      "stdout": {
+        "allowed": ["4865dbdedb904181", "4865dbdedb904181\n"]
+      },
+      "stderr": {
+        "allowed": [""]
+      }
+    },
+    {
+      "name": "'Hello, world!' -m sum64 <filename>",
+      "params": ["-m", "sum64", "resources/lab1/test_Hello,world/file"],
+      "stdin": null,
+      "status_code": {
+        "allowed": [0]
+      },
+      "stdout": {
+        "allowed": ["4865dbdedb904181", "4865dbdedb904181\n"]
+      },
+      "stderr": {
+        "allowed": [""]
+      }
+    },
+
+
+    {
+      "name": "nsupng <filename> -m adler32",
+      "params": ["resources/lab1/test_png/file.png", "-m", "adler32"],
+      "stdin": null,
+      "status_code": {
+        "allowed": [0]
+      },
+      "stdout": {
+        "allowed": ["6e3d2443", "6e3d2443\n"]
+      },
+      "stderr": {
+        "allowed": [""]
+      }
+    },
+    {
+      "name": "nsupng -m adler32 <filename>",
+      "params": ["-m", "adler32", "resources/lab1/test_png/file.png"],
+      "stdin": null,
+      "status_code": {
+        "allowed": [0]
+      },
+      "stdout": {
+        "allowed": ["6e3d2443", "6e3d2443\n"]
+      },
+      "stderr": {
+        "allowed": [""]
+      }
+    },
+    {
+      "name": "nsupng <filename> -m sum64",
+      "params": ["resources/lab1/test_png/file.png", "-m", "sum64"],
+      "stdin": null,
+      "status_code": {
+        "allowed": [0]
+      },
+      "stdout": {
+        "allowed": ["35578bb6a154e6e7", "35578bb6a154e6e7\n"]
+      },
+      "stderr": {
+        "allowed": [""]
+      }
+    },
+    {
+      "name": "nsupng -m sum64 <filename>",
+      "params": ["-m", "sum64", "resources/lab1/test_png/file.png"],
+      "stdin": null,
+      "status_code": {
+        "allowed": [0]
+      },
+      "stdout": {
+        "allowed": ["35578bb6a154e6e7", "35578bb6a154e6e7\n"]
+      },
+      "stderr": {
+        "allowed": [""]
+      }
+    },
+
+
+    {
+      "name": "'Wikipedia' <filename> -m adler32",
+      "params": ["resources/lab1/test_Wikipedia/file", "-m", "adler32"],
+      "stdin": null,
+      "status_code": {
+        "allowed": [0]
+      },
+      "stdout": {
+        "allowed": ["11e60398", "11e60398\n"]
+      },
+      "stderr": {
+        "allowed": [""]
+      }
+    },
+    {
+      "name": "'Wikipedia' -m adler32 <filename>",
+      "params": ["-m", "adler32", "resources/lab1/test_Wikipedia/file"],
+      "stdin": null,
+      "status_code": {
+        "allowed": [0]
+      },
+      "stdout": {
+        "allowed": ["11e60398", "11e60398\n"]
+      },
+      "stderr": {
+        "allowed": [""]
+      }
+    },
+    {
+      "name": "'Wikipedia' <filename> -m sum64",
+      "params": ["resources/lab1/test_Wikipedia/file", "-m", "sum64"],
+      "stdin": null,
+      "status_code": {
+        "allowed": [0]
+      },
+      "stdout": {
+        "allowed": ["57696b69706564ca", "57696b69706564ca\n"]
+      },
+      "stderr": {
+        "allowed": [""]
+      }
+    },
+    {
+      "name": "'Wikipedia' -m sum64 <filename>",
+      "params": ["-m", "sum64", "resources/lab1/test_Wikipedia/file"],
+      "stdin": null,
+      "status_code": {
+        "allowed": [0]
+      },
+      "stdout": {
+        "allowed": ["57696b69706564ca", "57696b69706564ca\n"]
+      },
+      "stderr": {
+        "allowed": [""]
+      }
+    }
+  ]
+}
