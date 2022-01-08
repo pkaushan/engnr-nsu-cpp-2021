@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "C:/Users/79639/engnr-nsu-cpp-2021/1/Hashfunc.cpp" "C:/Users/79639/engnr-nsu-cpp-2021/1/cmake-build-debug/CMakeFiles/hasher.dir/hashfunc.cpp.obj"
+  "C:/Users/79639/engnr-nsu-cpp-2021/1/Hashfunc.cpp" "C:/Users/79639/engnr-nsu-cpp-2021/1/cmake-build-debug/CMakeFiles/hasher.dir/Hashfunc.cpp.obj"
   "C:/Users/79639/engnr-nsu-cpp-2021/1/main.cpp" "C:/Users/79639/engnr-nsu-cpp-2021/1/cmake-build-debug/CMakeFiles/hasher.dir/main.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
