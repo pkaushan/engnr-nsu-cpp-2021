@@ -10,7 +10,7 @@ int main(int argc, char *argv[]) {
     std::string helper, path, mode;
     helper = "Instruction: ./helper -m <mode> <filename> or ./helper <filename> -m <mode>. \n<mode>: adler32 or sum64";
     if (argc == 2) {
-        if (strcmp(argv[1], "-h") == 0){
+        if (strcmp(argv[1], "-h") == 0) {
             std::cout << helper << std::endl;
             return 0;
         }
