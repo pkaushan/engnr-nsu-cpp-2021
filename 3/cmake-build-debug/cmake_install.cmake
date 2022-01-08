@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/79639/engnr-nsu-cpp-2021/3
+# Install script for directory: C:/Users/79639/Desktop/ger 3
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -34,22 +34,12 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/Users/79639/engnr-nsu-cpp-2021/3/cmake-build-debug/src/main/cmake_install.cmake")
+  include("C:/Users/79639/Desktop/ger 3/cmake-build-debug/googletest/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/Users/79639/engnr-nsu-cpp-2021/3/cmake-build-debug/src/LinkedList/cmake_install.cmake")
-endif()
-
-if(NOT CMAKE_INSTALL_LOCAL_ONLY)
-  # Include the install script for the subdirectory.
-  include("C:/Users/79639/engnr-nsu-cpp-2021/3/cmake-build-debug/googletest/cmake_install.cmake")
-endif()
-
-if(NOT CMAKE_INSTALL_LOCAL_ONLY)
-  # Include the install script for the subdirectory.
-  include("C:/Users/79639/engnr-nsu-cpp-2021/3/cmake-build-debug/test/cmake_install.cmake")
+  include("C:/Users/79639/Desktop/ger 3/cmake-build-debug/test/cmake_install.cmake")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)
@@ -60,5 +50,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "C:/Users/79639/engnr-nsu-cpp-2021/3/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "C:/Users/79639/Desktop/ger 3/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

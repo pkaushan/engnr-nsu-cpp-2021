@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/79639/engnr-nsu-cpp-2021/3/test
+# Install script for directory: C:/Users/79639/Desktop/ger 3/test
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
