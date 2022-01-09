@@ -1,0 +1,2 @@
+# Avoid LF -> CRLF conversion 
+/test_*/file*	-text
